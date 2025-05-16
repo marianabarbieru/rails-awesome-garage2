@@ -1,0 +1,15 @@
+<div class="container">
+
+  <h1>This is the list of favorites</h1>
+
+  <% @favorites.each do |favorite| %>
+    <div class="card">
+      <%= favorite.car.brand %>
+      <%= favorite.car.model %>
+      <%= favorite.car.year %>
+      <%= favorite.car.fuel %>
+      <%= link_to "delete", favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </div>
+  <% end %>
+  <%= link_to "Back", cars_path %>
+</div>

@@ -4,6 +4,8 @@ class CarsController < ApplicationController
   end
 
   def show
-@car = Car.find(params[:id])
+    @car = Car.find(params[:id])
+    @review = Review.new
+    @favorite = Favorite.new
   end
 end
